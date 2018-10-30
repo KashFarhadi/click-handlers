@@ -15,6 +15,7 @@
         <h2>1. Color changer</h2>
         <button id="gray_button">Gray</button>
         <button id="blue_button">Blue</button>
+        <button id="pink_button">Pink</button>
         <div id="color_box" class="gray"></div>        
         <script>
             const color_box = document.getElementById("color_box");
@@ -29,6 +30,11 @@
                 color_box.className = "blue";
             };
 
+            const pink_button = document.getElementById("pink_button");
+            pink_button.onclick = function () {
+                color_box.className = "pink";
+            };
+
             /* TODO 1
              *
              * Add a third button (and the associated event handler)
@@ -39,14 +45,25 @@
         <hr>
 
         <h2>2. Counter</h2>
+
         <button id="counter_button">This fabulous button</button>
-        has been clicked <span id="countspan">0</span> times.
+        has been clicked <span id="count">0</span> times.
+
         <script>
-            let count = 0;
+            "use strict";
+
+            var count = 0;
             const countspan = document.getElementById("countspan");
             
             const counter_button = document.getElementById("counter_button");
             counter_button.onclick = function() {
+
+                count+=1;
+
+                <!-- alert(count); -->
+                
+                document.getElementById("count").innerHTML = count; 
+
                 /* TODO 2
                  *
                  * Fill in this function so that it increments
@@ -64,6 +81,11 @@
         <script>
             const even_or_odd_button = document.getElementById("even_or_odd_button");
             even_or_odd_button.onclick = function() {
+
+               if(count%2==0) return alert("Now We're Even!");
+
+                    return alert("That's an Odd my man");
+
                 /* TODO 3
                  *
                  * Fill in this function so that it shows an
